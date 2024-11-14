@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="EquipmentOrganizer.UI.Views.AddEquipmentForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:model="clr-namespace:EquipmentOrganizer.Model;assembly=EquipmentOrganizer.Model"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:c="clr-namespace:EquipmentOrganizer.UI.Converters"
+             xmlns:local="clr-namespace:EquipmentOrganizer.UI.Views"
+             xmlns:vm="clr-namespace:EquipmentOrganizer.UI.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="dataEquipmentTypes" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="model:EquipmentType"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider x:Key="dataOwnerTypes" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="model:OwnerType"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider x:Key="dataDepartaments" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="model:Departament"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider x:Key="dataEquipmentStates" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="model:EquipmentState"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <c:EquipmentTypeConverter x:Key="eqTypeConverter"/>
+        <c:OwnerTypeToVisibilityConverter x:Key="ownerTypeVisConverter"/>
+        <c:DepartamentConverter x:Key="depConverter"/>
+        <c:AddFormTitleConverter x:Key="titleConverter"/>
+    </UserControl.Resources>
+
+    <Border Background="#60000000">
+        <Border BorderBrush="Gray" BorderThickness="3" Width="550" Height="550">
+            <Grid Background="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="25"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Image Source="C:\Users\111\Desktop\Univ\5sem\КПЗ\labs\lab2\EquipmentOrganizer\EquipmentOrganizer.UI\Images\3d_box_fill.png" Margin="0 20"/>
+                    <TextBlock Text="{Binding AddFormMode, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource textBlockHeader}"/>
+                    <TextBlock Text=" Equipment" Style="{StaticResource textBlockHeader}"/>
+                </StackPanel>
+
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="Equipment type" Style="{StaticResource textBlockRegular}"/>
+                <ComboBox Grid.Column="2" Grid.Row="1" Height="24" Width="320" HorizontalAlignment="Left"
+                         SelectedItem="{Binding AddedEquipment.EquipmentType, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         ItemsSource="{Binding Source={StaticResource dataEquipmentTypes}}"/>
+                <Rectangle Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource separatorLine}"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="3" Text="Equipment name" Style="{StaticResource textBlockRegular}"/>
+                <TextBox Grid.Column="2" Grid.Row="3" Height="24" Width="320" HorizontalAlignment="Left" 
+                         Text="{Binding AddedEquipment.Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <Rectangle Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource separatorLine}"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="5" Text="Purchase date" Style="{StaticResource textBlockRegular}"/>
+                <DatePicker Grid.Column="2" Grid.Row="5" Height="24" Width="320" HorizontalAlignment="Left"
+                         Text="{Binding AddedEquipment.PurchaseDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <Rectangle Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Style="{StaticResource separatorLine}"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="7" Text="Cost" Style="{StaticResource textBlockRegular}"/>
+                <TextBox Grid.Column="2" Grid.Row="7" Height="24" Width="320" HorizontalAlignment="Left"
+                         Text="{Binding AddedEquipment.Cost, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <Rectangle Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Style="{StaticResource separatorLine}"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="9" Text="Equipment state" Style="{StaticResource textBlockRegular}"/>
+                <ComboBox Grid.Column="2" Grid.Row="9" Height="24" Width="320" HorizontalAlignment="Left"
+                         SelectedItem="{Binding AddedEquipment.EquipmentState, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         ItemsSource="{Binding Source={StaticResource dataEquipmentStates}}"/>
+                <Rectangle Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2" Style="{StaticResource separatorLine}"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="11" Text="Owner type" Style="{StaticResource textBlockRegular}"/>
+                <ComboBox Grid.Column="2" Grid.Row="11" Height="24" Width="320" HorizontalAlignment="Left"
+                         SelectedItem="{Binding AddedEquipment.OwnerType, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         ItemsSource="{Binding Source={StaticResource dataOwnerTypes}}"/>
+                <Rectangle Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Style="{StaticResource separatorLine}"/>
+                
+                <TextBlock Grid.Column="1" Grid.Row="13" Text="Employee name" Style="{StaticResource textBlockRegular}"
+                           Visibility="{Binding AddedEquipment.OwnerType, Converter={StaticResource ownerTypeVisConverter}, ConverterParameter=Employee}"/>
+                <ComboBox Grid.Column="2" Grid.Row="13" Height="24" Width="320" HorizontalAlignment="Left"
+                          Visibility="{Binding AddedEquipment.OwnerType, Converter={StaticResource ownerTypeVisConverter}, ConverterParameter=Employee}"
+                          SelectedIndex="0" ItemsSource="{Binding Employees}" DisplayMemberPath="Name"/>
+                <Rectangle Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="2" Style="{StaticResource separatorLine}"
+                           Visibility="{Binding AddedEquipment.OwnerType, Converter={StaticResource ownerTypeVisConverter}, ConverterParameter=Employee}"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="13" Text="Departament name" Style="{StaticResource textBlockRegular}"
+                           Visibility="{Binding AddedEquipment.OwnerType, Converter={StaticResource ownerTypeVisConverter}, ConverterParameter=Departament}"/>
+                <ComboBox Grid.Column="2" Grid.Row="13" Height="24" Width="320" HorizontalAlignment="Left"
+                          Visibility="{Binding AddedEquipment.OwnerType, Converter={StaticResource ownerTypeVisConverter}, ConverterParameter=Departament}"
+                          SelectedItem="{Binding AddedEquipment.Owner, Converter={StaticResource depConverter}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                          ItemsSource="{Binding Source={StaticResource dataDepartaments}, Converter={StaticResource depConverter}}"/>
+                <Rectangle Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="2" Style="{StaticResource separatorLine}"
+                           Visibility="{Binding AddedEquipment.OwnerType, Converter={StaticResource ownerTypeVisConverter}, ConverterParameter=Departament}"/>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="15">
+                    <Button Margin="0 0 20 0" Style="{StaticResource buttonkRegular}"
+                            Command="{Binding SetEquipmentFormVisibility}" CommandParameter="formClose">Close</Button>
+                    <Button Style="{StaticResource buttonkRegular}"
+                            Command="{Binding AddEquipment}" CommandParameter="{Binding AddedEquipment}"
+                            Content="{Binding Path=AddFormMode, Converter={StaticResource titleConverter}, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
+</UserControl>

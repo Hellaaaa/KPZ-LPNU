@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquipmentOrganizer.UI", "EquipmentOrganizer.UI\EquipmentOrganizer.UI.csproj", "{33E5A1DC-1EB7-441E-A982-CC42F77EF8DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquipmentOrganizer.Model", "EquipmentOrganizer.Model\EquipmentOrganizer.Model.csproj", "{42946A0C-7179-4BA0-A3A9-F5B0659BE696}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33E5A1DC-1EB7-441E-A982-CC42F77EF8DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33E5A1DC-1EB7-441E-A982-CC42F77EF8DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33E5A1DC-1EB7-441E-A982-CC42F77EF8DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33E5A1DC-1EB7-441E-A982-CC42F77EF8DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42946A0C-7179-4BA0-A3A9-F5B0659BE696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42946A0C-7179-4BA0-A3A9-F5B0659BE696}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42946A0C-7179-4BA0-A3A9-F5B0659BE696}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42946A0C-7179-4BA0-A3A9-F5B0659BE696}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E25222D-B41A-4F47-8BA0-EEE32BF8A36F}
+	EndGlobalSection
+EndGlobal

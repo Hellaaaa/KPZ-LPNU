@@ -1,0 +1,30 @@
+﻿<Window x:Class="EquipmentOrganizer.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EquipmentOrganizer.UI"
+        xmlns:views="clr-namespace:EquipmentOrganizer.UI.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280">
+    <TabControl TabStripPlacement="Left" Background="Gray">
+        <TabItem Style="{StaticResource tabItem}">
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="C:\Users\111\Desktop\Univ\5sem\КПЗ\labs\lab2\EquipmentOrganizer\EquipmentOrganizer.UI\Images\3d_box_fill.png"/>
+                    <TextBlock Text="Equipment" Style="{StaticResource textBlockRegular}" Margin="10 0"/>
+                </StackPanel>
+            </TabItem.Header>
+            <views:BrowseEquipmentScreen/>
+        </TabItem>
+        <TabItem Style="{StaticResource tabItem}">
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="C:\Users\111\Desktop\Univ\5sem\КПЗ\labs\lab2\EquipmentOrganizer\EquipmentOrganizer.UI\Images\User_scan_fill.png"/>
+                    <TextBlock Text="Employees" Style="{StaticResource textBlockRegular}" Margin="10 0"/>
+                </StackPanel>
+            </TabItem.Header>
+            <views:BrowseEmployeeScreen/>
+        </TabItem>
+    </TabControl>
+</Window>
