@@ -1,22 +1,110 @@
-### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch.json folder
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+yarn.lock
+package-lock.json
+
+# Build directories
+dist/
+build/
+
+# C# Build directories
+bin/
+obj/
+
+# Visual Studio specific files
 .vscode/
-#Cache folder
-.alcache/
-#Symbols folder
-.alpackages/
-#Snapshots folder
-.snapshots/
-#Testing Output folder
-.output/
-#Extension App-file
-*.app
-#Rapid Application Development File
-rad.json
-#Translation Base-file
-*.g.xlf
-#License-file
-*.flf
-#Test results file
-TestResults.xml
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider specific files
+.idea/
+.idea_modules/
+*.sln.iml
+
+# Rider and ReSharper generated files
+_ReSharper/
+*.DotSettings.user
+
+# User-specific files
+*.rsuser
+*.sln.ide
+
+# JetBrains Rider cache directories and files
+.idea/
+*.idea/
+
+# Package directories
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# Rider specific workspace files
+.idea/
+.idea_modules/
+
+# Database files
+*.mdf
+*.ldf
+*.sqlite
+*.sqlite3
+*.db
+
+# Temporary files and generated files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.dll
+*.exe
+*.pdb
+*.cache
+*.ilk
+*.aps
+*.chm
+*.ncb
+*.sdf
+*.ipch
+*.tlog
+*.log
+
+# Log files
+*.log
+
+# Dump files
+*.dmp
+*.pid
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+*.class
+
+# Expo and React Native specific files
+.expo/
+.expo-shared/
+*.expo
+*.iml
+
+# iOS and Android generated files (React Native)
+ios/Pods/
+android/build/
+android/app/build/
+*.apk
+*.aab
+*.ipa
+*.keystore
+
+# Files for Windows and Mac specific
+Desktop.ini
+._*
